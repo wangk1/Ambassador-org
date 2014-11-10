@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 body {
-  padding-top: 20px;
+
 }
 
 .active{
@@ -156,7 +156,7 @@ h1 {
 
 /*Main page banner*/
 #main-banner{
-	background-image:url("../res/banner.jpg");
+	background-image:url("../img/banner.jpg");
 	background-size:cover;
 	background-repeat: no-repeat;
 	min-height:50px;
@@ -185,7 +185,7 @@ h1 {
 	min-height:500px;
 	border-top:solid 2px white;
 	
-	background-image:url("../res/carousel_placeholder.jpg");
+	background-image:url("../img/carousel_placeholder.jpg");
 	background-size:cover;
 	background-repeat: no-repeat;
 }
