@@ -27,6 +27,12 @@ AppyControllers.controller('HomeCtrl', ['$scope', 'Job',
 
   }]);
 
+AppyControllers.controller('RegistrationCtrl', ['$scope', 'Job',
+   function($scope) {
+
+  }]);
+
+
 AppyControllers.controller('HeaderController', ['$scope', '$location',
    function($scope, $location) {
      $scope.isActive = function (viewLocation) { 

@@ -1,12 +1,16 @@
     <div class="container">
       <h1>Registration</h1><br>
-      <form>
-        <input type="radio" name="usertype" value="student" checked="checked">Student<br>
-        <input type="radio" name="usertype" value="company">Company<br>
-      </form>
-      
+    
+    <div class="choose-user">
+      <h4>I am a:</h4>
+      <div class="btn-group">
+        <button type="button" ng-click="content='other'" value="other" class="btn btn-default">Student</button>
+        <button type="button" ng-click="content='this'" value="this" class="btn btn-default">Company Representative</button>
+      </div>
+     </div>
+
      
-      <div class="form" id="student">
+      <div class="form" id="student" ng-show="content=='other'">
         <form class="form-horizontal">
         
         <div class="form-group">
@@ -42,10 +46,7 @@
         </form>
       </div>
 
-<div><br><br></div>
-
-
-      <div class="form" id="company">
+      <div class="form" id="company" ng-show="content=='this'">
         <form class="form-horizontal">
         
         <div class="form-group">
