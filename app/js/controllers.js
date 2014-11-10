@@ -4,16 +4,17 @@
 
 var AppyControllers = angular.module('AppyControllers', []);
 
-AppyControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
-    $scope.phones = Phone.query();
+AppyControllers.controller('JobListCtrl', ['$scope', 'Job',
+  function($scope, Job) {
+    $scope.jobs = Job.query();
+    console.log($scope.jobs);
     $scope.orderProp = 'age';
   }]);
 
-AppyControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
+AppyControllers.controller('JobDetailCtrl', ['$scope', '$routeParams', 'Job',
+  function($scope, $routeParams, Job) {
+      $scope.job = Job.get({phoneId: $routeParams.phoneId}, function(job) {
+      // $scope.mainImageUrl = phone.images[0];
     });
 
     $scope.setImage = function(imageUrl) {
@@ -21,7 +22,7 @@ AppyControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone'
     }
   }]);
 
-AppyControllers.controller('HomeCtrl', ['$scope', 'Phone',
+AppyControllers.controller('HomeCtrl', ['$scope', 'Job',
    function($scope) {
 
   }]);

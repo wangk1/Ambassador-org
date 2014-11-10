@@ -4,9 +4,9 @@
 
 var AppyServices = angular.module('AppyServices', ['ngResource']);
 
-AppyServices.factory('Phone', ['$resource',
+AppyServices.factory('Job', ['$resource',
   function($resource){
-    return $resource('phones/:phoneId.json', {}, {
-      query: {method:'GET', params:{phoneId:'phones'}, isArray:true}
+    return $resource('jobs/:phoneId.json', {}, {
+      query: {method:'GET', params:{phoneId:'jobs'}, isArray:true}
     });
   }]);

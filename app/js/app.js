@@ -20,12 +20,12 @@ AppyApp.config(['$routeProvider',
 
       when('/companies', {
         templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+        controller: 'JobListCtrl'
       }).
 
       when('/phones/:phoneId', {
         templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+        controller: 'JobDetailCtrl'
       }).
   
       when('/profile',{

@@ -8,7 +8,7 @@ body {
   color:black;
 }
 
-.phone-images {
+.job-images {
   background-color: white;
   width: 450px;
   height: 450px;
@@ -17,7 +17,7 @@ body {
   float: left;
 }
 
-.phones {
+.jobs {
   list-style: none;
 }
 
@@ -29,14 +29,14 @@ body {
   width: 100px;
 }
 
-.phones li {
+.jobs li {
   clear: both;
   height: 115px;
   padding-top: 15px;
 }
 
 /** Detail View **/
-img.phone {
+img.job {
   float: left;
   margin-right: 3em;
   margin-bottom: 2em;
@@ -47,30 +47,30 @@ img.phone {
   display: none;
 }
 
-img.phone:first-child {
+img.job:first-child {
   display: block;
 }
 
 
-ul.phone-thumbs {
+ul.job-thumbs {
   margin: 0;
   list-style: none;
 }
 
-ul.phone-thumbs li {
+ul.job-thumbs li {
   border: 1px solid black;
   display: inline-block;
   margin: 1em;
   background-color: white;
 }
 
-ul.phone-thumbs img {
+ul.job-thumbs img {
   height: 100px;
   width: 100px;
   padding: 1em;
 }
 
-ul.phone-thumbs img:hover {
+ul.job-thumbs img:hover {
   cursor: pointer;
 }
 

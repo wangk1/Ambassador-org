@@ -7,22 +7,35 @@
       Sort by:
       <select ng-model="orderProp">
         <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
+        <option value="age">Date Application Due</option>
       </select>
 
     </div>
-    <div class="col-md-10">
-      <!--Body content-->
 
-      <ul class="phones">
-        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp"
-            class="thumbnail phone-listing">
-          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.snippet}}</p>
+<div class="col-md-10">
+      <ul class="jobs">
+        <li ng-repeat="job in jobs  | filter:query | orderBy:orderProp"
+            class="thumbnail job-listing">
+
+          <a href="#/job/{{job.title}}" class="thumb"><!-- <img ng-src="{{job.imageUrl}}"> --></a>
+          <a href="#/job/{{job.company_name}}">{{job.title}}</a>
+          <p>{{job.description}}</p>
+        </li>
+      </ul>
+</div>
+
+    <!-- <div class="col-md-10">
+   
+
+      <ul class="jobs">
+        <li ng-repeat="job in jobs | filter:query | orderBy:orderProp"
+            class="thumbnail job-listing">
+          <a href="#/jobs/{{job.id}}" class="thumb"><img ng-src="{{job.imageUrl}}"></a>
+          <a href="#/jobs/{{job.id}}">{{job.name}}</a>
+          <p>{{job.snippet}}</p>
         </li>
       </ul>
 
-    </div>
+    </div> -->
   </div>
 </div>
