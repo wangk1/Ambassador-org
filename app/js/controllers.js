@@ -29,7 +29,6 @@ AppyControllers.controller('HomeCtrl', ['$scope', 'Job',
 
 AppyControllers.controller('HeaderController', ['$scope', '$location',
    function($scope, $location) {
-  
      $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };

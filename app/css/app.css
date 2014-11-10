@@ -8,6 +8,18 @@ body {
   color:black;
 }
 
+.listing{
+	display:block;
+	height: 100px;
+	padding-left: 10px;
+}
+a.nounderline {
+	text-decoration: none;
+}
+
+.smaller{
+	font-size:80%;
+}
 .job-images {
   background-color: white;
   width: 450px;

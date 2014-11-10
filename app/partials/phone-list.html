@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <h1>Jobs</h1><br><br>
   <div class="row">
     <div class="col-md-2">
       <!--Sidebar content-->
@@ -14,13 +15,13 @@
 
 <div class="col-md-10">
       <ul class="jobs">
-        <li ng-repeat="job in jobs  | filter:query | orderBy:orderProp"
-            class="thumbnail job-listing">
-
-          <a href="#/job/{{job.title}}" class="thumb"><!-- <img ng-src="{{job.imageUrl}}"> --></a>
-          <a href="#/job/{{job.company_name}}">{{job.title}}</a>
-          <p>{{job.description}}</p>
-        </li>
+        <a href="#/job/{{job.company_name}}" ng-repeat="job in jobs  | filter:query | orderBy:orderProp"
+            class="thumbnail job-listing nounderline listing">
+            
+          <h4>{{job.title}} <span class="smaller">at {{job.company}}</span> </h4>
+          <h8>{{job.description}}</h8>
+        
+        </a>
       </ul>
 </div>
 

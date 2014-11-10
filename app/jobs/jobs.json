@@ -1,16 +1,16 @@
 [
     {
         "title": "Ambassador",
-        "company_name": "Google",
+        "company": "Google",
         "companyid":"", 
         "website": "www.google.com",
         "logo": "",
-        "description": "",
+        "description": "University students who share our passion for technology help bring awareness about Google products and programs to their campus communities.",
         "application_date": ""
     }, 
       {
         "title": "Ambassador",
-        "company_name": "Google",
+        "company": "Google",
         "companyid":"", 
         "website": "www.google.com",
         "logo": "",
