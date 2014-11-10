@@ -25,7 +25,7 @@
   </div>
  -->
 
-<div ng-controller="HeaderController" class="main-nav">
+<div ng-controller="HeaderController">
 	<!--The main navagation bar at the top of the page-->
 	<ul class="nav nav-pills ">
     <li role="presentation" ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a></li>
@@ -38,14 +38,11 @@
   
     <li role="presentation" ng-class="{ active: isActive('/about')}"><a href="#/about">About</a></li>
 
+    <li role="presentation" class="login" ng-class="{ active: isActive('/student-list')}"><a href="#/student-list">For Employers - Find Talent!</a></li>
+
      <li role="presentation" class="login" ng-class="{ active: isActive('/login')}"><a href="#/login">Log In</a></li>
 </ul>
-
 </div>
-<!--
-
-</div>
--->
  <div ng-view> </div>
 </body>
 </html>

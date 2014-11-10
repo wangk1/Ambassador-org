@@ -19,12 +19,12 @@ AppyApp.config(['$routeProvider',
       }).
 
       when('/companies', {
-        templateUrl: 'partials/phone-list.html',
+        templateUrl: 'partials/job-list.html',
         controller: 'JobListCtrl'
       }).
 
       when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
+        templateUrl: 'partials/job-detail.html',
         controller: 'JobDetailCtrl'
       }).
   
@@ -45,6 +45,10 @@ AppyApp.config(['$routeProvider',
         when('/login',{
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
+      }).
+        when('/student-list',{
+        templateUrl: 'partials/student-list.html',
+        controller: 'StudentListCtrl'
       }).
 
       otherwise({
