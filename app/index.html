@@ -2,8 +2,8 @@
 <html lang="en" ng-app="AppyApp">
 <head>
   <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <title>Ambassadors</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/animations.css">
 
@@ -25,19 +25,24 @@
   </div>
  -->
 
-<div ng-controller="HeaderController">
-<ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a></li>
-  <li role="presentation" ng-class="{ active: isActive('/profile')}"><a href="#/profile">Profile</a></li>
+<div ng-controller="HeaderController" class="main-nav">
+	<!--The main navagation bar at the top of the page-->
+	<ul class="nav nav-pills ">
+  <li role="presentation" class="active nav-menu-elements" ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a></li>
+  <li role="presentation" class="nav-menu-elements" ng-class="{ active: isActive('/profile')}"><a href="#/profile">Profile</a></li>
   <li role="presentation" ng-class="{ active: isActive('/companies')}"><a href="#/companies">Companies</a></li>
-  <li role="presentation" ng-class="{ active: isActive('/registration')}"><a href="#/registration">Registration/Sign Up</a></li>
+  <li role="presentation" ng-class="{ active: isActive('/registration')}"><a href="#/registration">Registration</a></li>
   
   <li role="presentation" ng-class="{ active: isActive('/about')}"><a href="#/about">About</a></li>
 
-  <li role="presentation" ng-class="{ active: isActive('/login')}"><a href="#/login">Log In</a></li>
+  <li role="presentation" class="login" ng-class="{ active: isActive('/login')}"><a href="#/login">Log In</a></li>
 </ul>
-</div>
 
+</div>
+<!--
+
+</div>
+-->
  <div ng-view> </div>
 </body>
 </html>
