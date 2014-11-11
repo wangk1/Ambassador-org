@@ -23,9 +23,6 @@ AppyServices.factory('Job', ['$resource',
 //     return obj;    
 // });
 
-AppyServices.factory('mainInfo', function($http) { 
-    return $http.get('jobs/states.json');
-});
 AppyServices.factory('States', function($http) { 
-    return $http.get('jobs/states.json');
+    return $http.get('jobs/states.json'); //any backend route
 });
