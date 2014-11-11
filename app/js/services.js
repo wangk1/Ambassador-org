@@ -10,3 +10,22 @@ AppyServices.factory('Job', ['$resource',
       query: {method:'GET', params:{phoneId:'jobs'}, isArray:true}
     });
   }]);
+
+// AppyServices.factory('States', function($http) { 
+
+//     var obj = {content:null};
+
+//     $http.get('jobs/states.json').success(function(data) {
+//         // you can do some processing here
+//         obj.content = data;
+//     });    
+
+//     return obj;    
+// });
+
+AppyServices.factory('mainInfo', function($http) { 
+    return $http.get('jobs/states.json');
+});
+AppyServices.factory('States', function($http) { 
+    return $http.get('jobs/states.json');
+});

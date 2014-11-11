@@ -4,8 +4,8 @@
 
 var AppyControllers = angular.module('AppyControllers', []);
 
-AppyControllers.controller('JobListCtrl', ['$scope', 'Job',
-  function($scope, Job) {
+AppyControllers.controller('JobListCtrl', ['$scope', 'Job', 'States',
+  function($scope, Job, States) {
     $scope.jobs = Job.query();
     $scope.charLimit=150;
     $scope.order = 'company';
@@ -89,8 +89,12 @@ AppyControllers.controller('ProfileCtrl', ['$scope', 'Job',
   }]);
 
 
-AppyControllers.controller('StudentListCtrl', ['$scope', 'Job',
-   function($scope) {
+AppyControllers.controller('StudentListCtrl', ['$scope', 'Job', 'States',
+  function($scope, Job, States) {
+    
+    States.success(function(data) { 
+      console.log(data);
+    });
 
   }]);
 
