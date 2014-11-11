@@ -4,13 +4,13 @@
     <div class="choose-user">
       <h4>I am a:</h4>
       <div class="btn-group">
-        <button type="button" ng-click="content='other'" value="other" class="btn btn-default">Student</button>
-        <button type="button" ng-click="content='this'" value="this" class="btn btn-default">Company Representative</button>
+        <button type="button" ng-click="content='student'" value="student" class="btn btn-default">Student</button>
+        <button type="button" ng-click="content='company'" value="company" class="btn btn-default">Company Representative</button>
       </div>
      </div>
 
      
-      <div class="form" id="student" ng-show="content=='other'">
+      <div class="form" id="student" ng-show="content=='student'">
         <form class="form-horizontal">
         
         <div class="form-group">
@@ -56,7 +56,7 @@
         </form>
       </div>
 
-      <div class="form" id="company" ng-show="content=='this'">
+      <div class="form" id="company" ng-show="content=='company'">
         <form class="form-horizontal">
         
         <div class="form-group">

@@ -1,58 +1,66 @@
 <div class="container">
 
 
-  <div id="personal">
-  <h1>Profile</h1><br><br>
-  
-  <h3>Basics</h3>
-  <table class="table table-striped">
-    <tr>
-      <td>Name</td>
-      <td>John Smith</td>
-    </tr>
-    <tr>
-      <td>School</td>
-      <td>UNC Chapel Hill</td>
-    </tr>
-    <tr>
-      <td>E-mail</td>
-      <td>johnsmith@live.unc.edu</td>
-    </tr>
-  </table>
-  <br><br>
-  <h3>Favorites</h3>
-  <table class="table table-bordered">
-    <tr class="active" style="font-weight:bold"><td>Company Name</td><td>Site</td><td>Representative</td><td>Date Added</td></tr>
-    <tr><td>A Nice Company</td><td>www.example.com</td><td>Jane Doe</td><td>10/31/2014</td></tr>
-    <tr><td>Google</td><td>www.google.com</td><td>Larry Page</td><td>11/3/2014</td></tr>
-    <tr><td>Andromeda Research</td><td>www.arc.com</td><td>Benjamin Pearce</td><td>11/5/2014</td></tr>
-  </table>
+
+    <h1>Profile</h1>
+
+    <div class="choose-user">
+      <h4>I am a: (in the future this will pull based on session information)</h4>
+      <div class="btn-group">
+        <button type="button" ng-click="content='student'" value="student" class="btn btn-default">Student</button>
+        <button type="button" ng-click="content='company'" value="company" class="btn btn-default">Company Representative</button>
+      </div>
+    </div>
+
+<div id="personal" ng-show="content=='student'">
+    <h3>Basics</h3>
+    <table class="table table-striped">
+      <tr>
+        <td>Name</td>
+        <td>John Smith</td>
+      </tr>
+      <tr>
+        <td>School</td>
+        <td>UNC Chapel Hill</td>
+      </tr>
+      <tr>
+        <td>E-mail</td>
+        <td>johnsmith@live.unc.edu</td>
+      </tr>
+    </table>
+    <br><br>
+    <h3>Favorites</h3>
+    <table class="table table-bordered">
+      <tr class="active" style="font-weight:bold"><td>Company Name</td><td>Site</td><td>Representative</td><td>Date Added</td></tr>
+      <tr><td>A Nice Company</td><td>www.example.com</td><td>Jane Doe</td><td>10/31/2014</td></tr>
+      <tr><td>Google</td><td>www.google.com</td><td>Larry Page</td><td>11/3/2014</td></tr>
+      <tr><td>Andromeda Research</td><td>www.arc.com</td><td>Benjamin Pearce</td><td>11/5/2014</td></tr>
+    </table>
   </div>
   
-  <br><br><br><br>
+
   
-  <div id="company">
-  <h1>Profile</h1><br><br>
-  
-  <h3>Basics</h3>
-  <table class="table table-bordered table-striped">
-    <tr>
-      <td>Name</td>
-      <td>DataDyne Corporation</td>
-    </tr>
-    <tr>
-      <td>Location</td>
-      <td>Chicago, Illinois</td>
-    </tr>
-  </table>
-  <br><br>
-  <h3>Ambassador Opportunities</h3>
-  <table class="table table-bordered">
-    <tr class="active" style="font-weight:bold"><td>School</td><td>Location</td></tr>
-    <tr><td>UNC Chapel Hill</td><td>Chapel Hill, NC</td></tr>
-    <tr><td>UNC Charlotte</td><td>Charlotte, NC</td></tr>
-    <tr><td>Duke University</td><td>Durham, NC</td></tr>
-  </table>
+  <div id="company" ng-show="content=='company'">
+
+    <h3>Basics</h3>
+    <table class="table table-bordered table-striped">
+      <tr>
+        <td>Name</td>
+        <td>DataDyne Corporation</td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td>Chicago, Illinois</td>
+      </tr>
+    </table>
+    <br><br>
+    <h3>Ambassador Opportunities</h3>
+    <table class="table table-bordered">
+      <tr class="active" style="font-weight:bold"><td>School</td><td>Location</td></tr>
+      <tr><td>UNC Chapel Hill</td><td>Chapel Hill, NC</td></tr>
+      <tr><td>UNC Charlotte</td><td>Charlotte, NC</td></tr>
+      <tr><td>Duke University</td><td>Durham, NC</td></tr>
+    </table>
   </div>
   
   
