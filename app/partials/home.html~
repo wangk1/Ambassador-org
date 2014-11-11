@@ -1,18 +1,24 @@
 <div class="main-div">
 	<div id="main-page">
+		<div id="main-banner">
+
+			<h1 class="white">Welcome to Student Ambassador Finder!</h1>
+		</div>
+		<!-- The Carusel
 		<div ng-controller="HomeCtrl">
-		  <div style="height: 500px">
-		    <carousel interval="interval">
-		      <slide ng-repeat="slide in slides" active="slide.active">
-			<img ng-src="{{slide.image}}" style="margin:auto;height:600px;width:100%;">
-			<div class="carousel-caption" style="background-color:grey;opacity:0.7;border-radius:20px;">
-			  <h2>{{slide.title}}</h2>
-			  <p>{{slide.text}}</p>
-			</div>
-		      </slide>
-		    </carousel>
-		  </div>
-		 </div>
+			  <div style="height: 500px">
+			    <carousel interval="interval">
+			      <slide ng-repeat="slide in slides" active="slide.active">
+				<img ng-src="{{slide.image}}" style="margin:auto;height:600px;width:100%;">
+				<div class="carousel-caption" style="background-color:grey;opacity:0.7;border-radius:20px;">
+				  <h2>{{slide.title}}</h2>
+				  <p>{{slide.text}}</p>
+				</div>
+			      </slide>
+			    </carousel>
+			  </div>
+			</div>-->
+	
 
 <!--
 		<div>

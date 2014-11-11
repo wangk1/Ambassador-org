@@ -4,7 +4,7 @@
 
 var AppyApp= angular.module('AppyApp', [
   'ngRoute',
-//  'AppyAnimations',
+  'AppyAnimations',
   'AppyControllers',
   'AppyFilters',
   'AppyServices',

@@ -25,7 +25,7 @@ AppyControllers.controller('JobDetailCtrl', ['$scope', '$routeParams', 'Job',
 //Home Controller
 AppyControllers.controller('HomeCtrl', ['$scope', 'Job','$carousel', function($scope,Job, $carousel) {
 
-	$scope.interval = 6000;
+	$scope.interval = 1000;
   	var slides = $scope.slides = [];
   	$scope.addSlide = function() {
    		var newWidth = slides.length;

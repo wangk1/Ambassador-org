@@ -199,30 +199,23 @@ h1 {
 }
 
 /*Carousel Stuff*/
-#carousel{
+.carousel-container{
+	height:500px;
+
+}
+
+.carousel-containter img{
+	margin:auto;
+	height:600px;
 	width:100%;
-	min-height:500px;
-	border-top:solid 2px white;
 	
-	background-image:url("../img/carousel_placeholder.jpg");
-	background-size:cover;
-	background-repeat: no-repeat;
 }
 
-.carousel-cap{
-	overflow:hidden;
-	padding:0px;
-	color:white;
-	background-color:#666699;
-	min-height:20px;
-	opacity:50%;
+.carousel-caption{
+	background-color:grey;
+	opacity:0.7;
+	border-radius:20px;
 
-}
-
-.carousel-cap>h3{
-	margin:0px;
-	border-bottom:solid 3px white;
-	
 }
 
 /*main-page ambassador button*/
