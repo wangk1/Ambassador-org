@@ -1,0 +1,43 @@
+<div class="main-div">
+	<div id="main-page">
+		<div ng-controller="HomeCtrl">
+		  <div style="height: 500px">
+		    <carousel interval="interval">
+		      <slide ng-repeat="slide in slides" active="slide.active">
+			<img ng-src="{{slide.image}}" style="margin:auto;height:600px;width:100%;">
+			<div class="carousel-caption" style="background-color:grey;opacity:0.7;border-radius:20px;">
+			  <h2>{{slide.title}}</h2>
+			  <p>{{slide.text}}</p>
+			</div>
+		      </slide>
+		    </carousel>
+		  </div>
+		 </div>
+
+<!--
+		<div>
+			<button type="button" class="btn btn-primary btn-block ambassador-btn"> Click Here to become a Student Ambassador!</button>
+		</div>
+
+		<div class="row gray">
+			<h2>The Team</h2>
+		    <div class="col-sm-4">
+			<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+			<h2>Jake Bernstein</h2>
+			<p>Junior</p>
+		    </div>
+		    <div class="col-sm-4">
+			<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+			<h2>Kevin Wang</h2>
+			<p>Senior</p>
+		    </div>
+		    <div class="col-sm-4">
+			<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+			<h2>Steven Walter</h2>
+			<p>Another Student</p>
+		    </div>
+		</div>-->
+	</div>
+
+
+</div>

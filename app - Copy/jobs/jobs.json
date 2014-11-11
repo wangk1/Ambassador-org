@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Ambassador",
+        "company": "Google",
+        "companyid":"", 
+        "website": "www.google.com",
+        "logo": "",
+        "description": "University students who share our passion for technology help bring awareness about Google products and programs to their campus communities.",
+        "application_date": ""
+    }, 
+      {
+        "title": "Ambassador",
+        "company": "Firefox",
+        "companyid":"", 
+        "website": "",
+        "logo": "",
+        "description": "Creative and resourceful, Student Ambassadors lead campaigns and projects at their colleges and in their communities to encourage others to contribute to Mozilla (and utilize our products). Together, Firefox Student Ambassadors play a large role in helping to improve the global experience of people on the Web.",
+        "application_date": ""
+    },
+    {
+        "title": "Ambassador",
+        "company": "Apple",
+        "companyid":"", 
+        "website": "",
+        "logo": "",
+        "description": "YO.",
+        "application_date": ""
+    }
+]
