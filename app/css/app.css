@@ -146,7 +146,7 @@ h1 {
 .main-nav li{
 	font-size:16px;
 	width: 10%;
-
+	min-width:115px;
 }
 
 /*Overrides the setting in bootstrap, the active top menu item now is in different colors*/
