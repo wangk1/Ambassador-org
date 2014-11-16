@@ -85,7 +85,7 @@
         <div class="row">
         	<h2>The Team</h2>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="img/about-pics/jake.jpg" alt="Jake">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="Jake">
                 <h2>Jake Bernstein</h2>
                 <p>Junior</p>
             </div>
