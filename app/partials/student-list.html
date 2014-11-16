@@ -1,33 +1,34 @@
+ <div class="container-fluid">
+  <h1>Students</h1><br><br>
   <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
+   <div class="col-md-3">
+    <!--Sidebar content-->
 
-      <h5>Search:</h5> <input type="text" class="form-control" ng-model="query">
-      <h5>Sort by:</h5>
-      <select ng-model="order" class="form-control">
-        <option value="company">Company</option>
-        <option value="application_date">Date Application Due</option>
+    <h5>Search:</h5> <input type="text" class="form-control" ng-model="query">
+
+    <h5>Only students in the following majors</h5>
+        <!--  <select ng-model="major" class="form-control">
+          <option value="company">Technical/Engineering</option>
+          <option value="application_date">Business</option>
+        </select>
+      -->
+      <select ng-model="majorchoose" class="form-control" ng-options="major for major in majors" /></select>
+      <h5>Students attending University in:</h5>
+
+      <select ng-model="statechoose" class="form-control" ng-options="state.name for state in states">
       </select>
-
     </div>
 
-    <h5>I am looking for a student in> 
-
-<!--     <div class="col-md-10">
+    <div class="col-md-9">
       <ul class="jobs">
-        <a href="#/job/{{job.company}}" ng-repeat="job in jobs  | filter:query | orderBy: order"
+        <a href="#/job/{{job.company}}" ng-repeat="student in students  | filter:query"
         class="thumbnail job-listing nounderline listing">
         
-          <h4 class="jobleft">{{job.title}} <span class="smaller">at {{job.company}}</span> </h4>
-          <h5 class="duedate">Due on {{job.application_date}}</h5>
-
-        <div class="description">
-          <h8 ng-if="job.description.length>150">{{job.description | limitTo: charLimit}} ...</h8>
-          <h8 ng-if="job.description.length<=150">{{job.description}}</h8>
-        </div>
+        <h4 class="jobleft">{{student.name}} <span class="smaller">at {{student.school}}</span> </h4>
       </a>
     </ul>
   </div>
 
-  </div>
- --></div>
+</div>
+
+</div>
