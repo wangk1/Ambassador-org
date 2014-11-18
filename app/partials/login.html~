@@ -1,4 +1,4 @@
-    <div class="container ">
+    <div class="container login-options">
       <h1>Log In</h1><br>     
      
       <div class="form" id="login">
@@ -23,7 +23,7 @@
 
         </form>
 
- 	<div class="other-login ">
+ 	<div class="other-login login-options">
 		<img src="img/login/facebook.jpg"></img>
 		<img src="img/login/google.jpg"></img>
 		<img src="img/login/linkedin.jpg"></img>
