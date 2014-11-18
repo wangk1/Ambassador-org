@@ -150,14 +150,14 @@ h1 {
 }
 
 /*Overrides the setting in bootstrap, the active top menu item now is in different colors*/
-.nav-pills>li.active>a{
+.nav-pills>li:not(.login).active>a{
 	background-color:#41414E;
 	border-bottom-left-radius:0px;
 	border-bottom-right-radius:0px;
 	
 }
 /*Lighter color for the already active nav menu item*/
-.nav-pills>li>a:hover{
+.nav-pills>li:not(.login)>a:hover{
 	background-color:#B1B1B6 !important;
 
 }
@@ -167,13 +167,21 @@ h1 {
 	float:right;
 	background-color:white;
 	border: 1px solid black;
-	border-radius: 2px;
+	border-radius: 5px;
 	
 }
 
+.nav-pills>.login:active,
+.nav-pills>.login.hover{
+	background-color:blue;
+	border-radius: 5px;
+	
+}
+
+
 .nav-pills>.login>a{
 	padding:2px 3px 2px 3px;
-	margin: 2px 1px 2px 1px;
+	/*margin: 2px 1px 2px 1px;*/
 }
 
 
@@ -338,6 +346,7 @@ h1 {
 }
 
 /*Login page things*/
+
 .other-login{
 	margin-top:50px;
 	width:50%;
