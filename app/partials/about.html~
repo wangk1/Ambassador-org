@@ -11,14 +11,14 @@
 
         <div class="row">
             <div class="col-sm-8">
-		    <h2><span class="about-title-word">What</span> we want to Do</h2>
+		    <h2><span class="about-title-word">What we want to Do</span> </h2>
 		    <div class="about-indented"><p >Create a site that allows startups/companies to find and connection with their avid fans on campus, and give them the opportunity to be a part of their brand. </p>
 
 		     <p >We are uniquely qualified to make this site, as one team member has much relevant experience working as a corporate ambassador, and the other two students have spent much time looking for positions!</p></div>
 		    <h2><span class="about-title-word">Why</span> we are doing this</h2>
 		    <div class="about-indented"><p>		Give students the opportunity to connect with companies/brands they love in a setting outside of LinkedIn.</p></div>
 
-		<h2><span class="about-title-word">How</span> we're gonna do it: Basic Functionality</h2>
+		<h2><span class="about-title-word">How we're gonna do it: Basic Functionality</span></h2>
 
                <ul>
                		<li> Accounts
@@ -85,7 +85,7 @@
         <div class="row">
         	<h2>The Team</h2>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="Jake">
+                <img class="img-circle img-responsive img-center" src="img/about-pics/jake.jpg" alt="Jake">
                 <h2>Jake Bernstein</h2>
                 <p>Junior</p>
             </div>
