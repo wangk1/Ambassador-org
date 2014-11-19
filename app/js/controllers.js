@@ -4,27 +4,23 @@
 
 var AppyControllers = angular.module('AppyControllers', []);
 
-AppyControllers.controller('JobListCtrl', ['$scope', 'Job', 'States',
-  function($scope, Job) {
-    $scope.jobs = Job.query();
+AppyControllers.controller('JobListCtrl', ['$scope', 'Joblist', 'States',
+  function($scope, Joblist) {
+    $scope.jobs = Joblist.query();
     $scope.charLimit=150;
     $scope.order = 'company';
 
   }]);
 
-AppyControllers.controller('JobDetailCtrl', ['$scope', '$routeParams', 'Job',
-  function($scope, $routeParams, Job) {
-      $scope.job = Job.get({phoneId: $routeParams.phoneId}, function(job) {
-      // $scope.mainImageUrl = phone.images[0];
-    });
+AppyControllers.controller('CompanyDetailCtrl', ['$scope', '$routeParams', 'Company',
+  function($scope, $routeParams, Company) {
+      
+      $scope.company = Company.get({companyid: $routeParams.companyid}, function(data) {});
 
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    }
   }]);
 
 //Home Controller
-AppyControllers.controller('HomeCtrl', ['$scope', 'Job','$carousel', function($scope,Job, $carousel) {
+AppyControllers.controller('HomeCtrl', ['$scope','$carousel', function($scope, $carousel) {
 
 	$scope.interval = 6000;
   	var slides = $scope.slides = [];
@@ -67,30 +63,30 @@ AppyControllers.controller('HomeCtrl', ['$scope', 'Job','$carousel', function($s
 
 
 
-AppyControllers.controller('RegistrationCtrl', ['$scope', 'Job',
+AppyControllers.controller('RegistrationCtrl', ['$scope',
    function($scope) {
 
   }]);
 
-AppyControllers.controller('AboutCtrl', ['$scope', 'Job',
+AppyControllers.controller('AboutCtrl', ['$scope',
    function($scope) {
 
   }]);
 
-AppyControllers.controller('LoginCtrl', ['$scope', 'Job',
-   function($scope) {
-
-  }]);
-
-
-AppyControllers.controller('ProfileCtrl', ['$scope', 'Job',
+AppyControllers.controller('LoginCtrl', ['$scope',
    function($scope) {
 
   }]);
 
 
-AppyControllers.controller('StudentListCtrl', ['$scope', 'Job', 'States', 'Students',
-  function($scope, Job, States, Students) {
+AppyControllers.controller('ProfileCtrl', ['$scope',
+   function($scope) {
+
+  }]);
+
+
+AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students',
+  function($scope, States, Students) {
     
     States.success(function(data) { 
       $scope.states=data;

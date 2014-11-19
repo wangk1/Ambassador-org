@@ -4,12 +4,20 @@
 
 var AppyServices = angular.module('AppyServices', ['ngResource']);
 
-AppyServices.factory('Job', ['$resource',
+AppyServices.factory('Joblist', ['$resource',
   function($resource){
-    return $resource('jobs/:phoneId.json', {}, {
-      query: {method:'GET', params:{phoneId:'jobs'}, isArray:true}
+    return $resource('data/:companyid.json', {}, {
+      query: {method:'GET', params:{companyid:'jobs'}, isArray:true}
     });
   }]);
+
+AppyServices.factory('Company', ['$resource',
+  function($resource){
+ 	return $resource('data/:companyid.json', {
+      companyid : '@companyid',
+    });
+  }]);
+
 
 // AppyServices.factory('States', function($http) { 
 
@@ -24,9 +32,13 @@ AppyServices.factory('Job', ['$resource',
 // });
 
 AppyServices.factory('States', function($http) { 
-    return $http.get('jobs/states.json'); //any backend route
+    return $http.get('data/states.json'); //any backend route
 });
 
 AppyServices.factory('Students', function($http) { 
-    return $http.get('jobs/students.json'); //any backend route
+    return $http.get('data/students.json'); //any backend route
 });
+
+// AppyServices.factory('Companies', function($http) { 
+//     return $http.get('data/companies/:companyid.json'); //any backend route
+// })

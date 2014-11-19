@@ -3,6 +3,9 @@
 body {
 
 }
+h2.centered{
+	text-align: center;
+}
 .jobleft{
 	float:left;
 }

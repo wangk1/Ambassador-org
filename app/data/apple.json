@@ -1,0 +1,30 @@
+{
+	"company": "Apple",
+	"location": "Cupertino, CA",
+    "title": "Ambassador",
+    "companyid":"", 
+    "logo": "",
+    "website": "apple.com",
+
+    "ambassador": {
+    	"description": "YO."
+    },
+    
+    "jobs": [
+    	{
+    		"school": "UNC",
+    		"location": "Chapel Hill, NC",
+    		"date": "date"
+    	},
+    	{
+    		"school": "Duke",
+    		"location": "Durham, NC",
+    		"date": "date"
+    	},
+    	{
+    		"school": "NC State",
+    		"location": "Raleigh, NC",
+    		"date": "date"
+    	}
+    ]
+}

@@ -1,0 +1,30 @@
+{
+	"company": "Google",
+	"location": "Mountain View, CA",
+    "title": "Ambassador",
+    "companyid":"", 
+    "logo": "",
+    "website": "apple.com",
+
+    "ambassador": {
+    	"description": "University students who share our passion for technology help bring awareness about Google products and programs to their campus communities."
+    },
+    
+    "jobs": [
+    	{
+    		"school": "UNC",
+    		"location": "Chapel Hill, NC",
+    		"date": "date"
+    	},
+    	{
+    		"school": "Duke",
+    		"location": "Durham, NC",
+    		"date": "date"
+    	},
+    	{
+    		"school": "NC State",
+    		"location": "Raleigh, NC",
+    		"date": "date"
+    	}
+    ]
+}

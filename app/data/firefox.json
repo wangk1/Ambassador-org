@@ -1,0 +1,30 @@
+{
+	"company": "FireFox",
+	"location": "Who the hell knows where Firefox HQ is?",
+    "title": "Ambassador",
+    "companyid":"", 
+    "logo": "",
+    "website": "firefox.com",
+
+    "ambassador": {
+    	"description": "Creative and resourceful, Student Ambassadors lead campaigns and projects at their colleges and in their communities to encourage others to contribute to Mozilla (and utilize our products). Together, Firefox Student Ambassadors play a large role in helping to improve the global experience of people on the Web."
+    },
+    
+    "jobs": [
+    	{
+    		"school": "UNC",
+    		"location": "Chapel Hill, NC",
+    		"date": "date"
+    	},
+    	{
+    		"school": "Duke",
+    		"location": "Durham, NC",
+    		"date": "date"
+    	},
+    	{
+    		"school": "NC State",
+    		"location": "Raleigh, NC",
+    		"date": "date"
+    	}
+    ]
+}

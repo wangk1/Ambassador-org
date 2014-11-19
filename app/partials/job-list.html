@@ -15,7 +15,7 @@
 
     <div class="col-md-10">
       <ul class="jobs">
-        <a href="#/job/{{job.company}}" ng-repeat="job in jobs  | filter:query | orderBy: order"
+        <a href="#/profile/{{job.company}}" ng-repeat="job in jobs  | filter:query | orderBy: order"
         class="thumbnail job-listing nounderline listing">
         
           <h4 class="jobleft">{{job.title}} <span class="smaller">at {{job.company}}</span> </h4>

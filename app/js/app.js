@@ -25,9 +25,9 @@ AppyApp.config(['$routeProvider',
         controller: 'JobListCtrl'
       }).
 
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/job-detail.html',
-        controller: 'JobDetailCtrl'
+      when('/profile/:companyid', {
+        templateUrl: 'partials/profile-real.html',
+        controller: 'CompanyDetailCtrl'
       }).
   
       when('/profile',{
