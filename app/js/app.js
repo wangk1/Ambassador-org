@@ -52,6 +52,9 @@ AppyApp.config(['$routeProvider',
         templateUrl: 'partials/student-list.html',
         controller: 'StudentListCtrl'
       }).
+       when('/testimonials',{
+        templateUrl: 'partials/testimonials.html',
+      }).
 
       otherwise({
         redirectTo: '/home'
