@@ -4,6 +4,11 @@
 
 var AppyServices = angular.module('AppyServices', ['ngResource']);
 
+AppyServices.factory('Tester', function($http) { 
+    return $http.get('http://wwwp.cs.unc.edu/Courses/comp426-f14/wangk1/test/t.php'); //any backend route
+    //json array
+});
+
 AppyServices.factory('Joblist', ['$resource',
   function($resource){
     return $resource('data/:companyid.json', {}, {
@@ -35,6 +40,7 @@ AppyServices.factory('States', function($http) {
     return $http.get('data/states.json'); //any backend route
 });
 
+//student users
 AppyServices.factory('Students', function($http) { 
     return $http.get('data/students.json'); //any backend route
 });

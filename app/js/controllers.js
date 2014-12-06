@@ -73,8 +73,12 @@ AppyControllers.controller('AboutCtrl', ['$scope',
 
   }]);
 
-AppyControllers.controller('LoginCtrl', ['$scope',
-   function($scope) {
+AppyControllers.controller('LoginCtrl', ['$scope', 'Tester',
+   function($scope, Tester) {
+
+    Tester.success(function(data) { 
+      $scope.here=data;
+    });
 
   }]);
 
