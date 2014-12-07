@@ -63,8 +63,28 @@ AppyControllers.controller('HomeCtrl', ['$scope','$carousel', function($scope, $
 
 
 
-AppyControllers.controller('RegistrationCtrl', ['$scope',
-   function($scope) {
+AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
+   function($scope, $http) {
+
+    $scope.signup = function() {
+      $scope.message="";
+      if ($scope.form.confirm_password!=$scope.form.password){
+        $scope.message="Passwords did not match!"
+      }
+      console.log($scope.form);
+
+    // $http.post('/someUrl',$scope.form).
+    //   success(function(data, status, headers, config) {
+    //   // this callback will be called asynchronously
+    //   // when the response is available
+    // }).
+    // error(function(data, status, headers, config) {
+    //   // called asynchronously if an error occurs
+    //   // or server returns response with an error status.
+    // });
+
+}
+
 
   }]);
 
@@ -78,6 +98,7 @@ AppyControllers.controller('LoginCtrl', ['$scope', 'Tester',
 
     Tester.success(function(data) { 
       $scope.here=data;
+      console.log(data);
     });
 
   }]);

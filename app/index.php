@@ -1,3 +1,15 @@
+<?php
+function is_logged_in() {
+  return false;
+
+  if(cookieIsValid()) {
+    return true;
+  }
+  return false;
+}
+//from login OR signup page page, AJAX request.  On success, window.location = 'app/#/home' to take people back to homepage
+//on failure, notify user on page that bad credentials.
+?>
 <!doctype html>
 <html lang="en" ng-app="AppyApp">
 <head>
@@ -42,16 +54,22 @@
        <li role="presentation" ng-class="{ active: isActive('/student-list')}"><a href="#/student-list">Find Students</a></li>
 
     <li role="presentation" ng-class="{ active: isActive('/companies')}"><a href="#/companies">Jobs</a></li>
-
-    <li role="presentation" ng-class="{ active: isActive('/registration')}"><a href="#/registration">Registration</a></li>
   
     <li role="presentation" ng-class="{ active: isActive('/about')}"><a href="#/about">About</a></li>
 
+
+<?php if(!is_logged_in()): ?>
+
+    <li role="presentation" class="login"  ng-class="{ active: isActive('/registration')}"><a href="#/registration"><div class="right">Registration</div></a></li>
+
      <li role="presentation" class="login" ng-class="{ active: isActive('/login')}"><a href="#/login"><div class="right">Log In</div></a></li>
 
-    <li role="presentation" class="login" ng-class="{ active: isActive('/profile')}"><a href="#/profile"><div class="right">Profile</div></a></li>
+    <li> 
+<?php else: ?>
+      <li role="presentation" class="login" ng-class="{ active: isActive('/profile')}"><a href="#/profile"><div class="right">Profile</div></a></li>
 
-
+    <li role="presentation" ng-class="{ active: isActive('/login')}"><a href="#/login"><?php echo $user['name']; ?></li>
+<?php endif; ?>
 </ul>
 
 </div>

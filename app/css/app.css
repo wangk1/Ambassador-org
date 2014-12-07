@@ -1,8 +1,17 @@
 /* app css stylesheet */
 
 body {
-
 }
+
+.error{
+	margin-top: 10px;
+	color:red;
+	margin-bottom: 10px;
+}
+.red{
+	border-color: red;
+}
+
 h2.centered{
 	text-align: center;
 }

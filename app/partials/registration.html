@@ -1,105 +1,182 @@
     <div class="container">
       <h1>Registration</h1><br>
-    
-    <div class="choose-user">
-      <h4>I am a:</h4>
-      <div class="btn-group">
-        <button type="button" ng-click="content='student'" value="student" class="btn btn-default">Student</button>
-        <button type="button" ng-click="content='company'" value="company" class="btn btn-default">Company Representative</button>
-      </div>
-     </div>
 
-     
-      <div class="form" id="student" ng-show="content=='student'">
-        <form class="form-horizontal">
-        
+      <div class="choose-user">
+        <h4>I am a:</h4>
+
+      <!-- <div class="btn-group">
+        <input type="radio" ng-click="content='student'" value="student" class="btn btn-default" ng-model="form.type">Student</input>
+        <input type="radio" ng-click="content='company'" value="company" class="btn btn-default" ng-model="form.type">Company Representative
+      </div> -->
+
+      <input id="toggle-on" class="toggle toggle-left" name="toggle" value="student" type="radio" ng-model="form.type" checked=true
+      ><label for="toggle-on" class="btn">Student</label
+      ><input id="toggle-off" class="toggle toggle-right" name="toggle" value="company" ng-model="form.type" type="radio"
+      ><label for="toggle-off" class="btn">Company Representative</label>
+    </div>
+
+
+    <div class = "error">
+      {{message}}
+    </div>
+
+    <div class="form" name="student" ng-if="form.type=='student'">
+      <form class="form-horizontal">
+
+        <div class="form-group">
+          <label for="inputFirstName" class="col-sm-2 control-label">First Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="inputfirstName" placeholder="First Name" ng-model="form.first_name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputLastName" class="col-sm-2 control-label">Last Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="inputfirstName" placeholder="Last Name" ng-model="form.last_name">
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="inputEmail" class="col-sm-2 control-label">Email</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label for="inputSchool" class="col-sm-2 control-label">School</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputSchool" placeholder="School">
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label for="inputMajor" class="col-sm-2 control-label"> Major</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputMajor" placeholder="Major">
+            <input type="text" class="form-control" name="inputEmail" placeholder="Email" ng-model="form.email">
           </div>
         </div>
         
         <div class="form-group">
           <label for="inputPassword" class="col-sm-2 control-label">Password</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="password" class="form-control" name="inputPassword" placeholder="Password" ng-model="form.password">
           </div>
         </div>
         
         <div class="form-group">
           <label for="inputPassword" class="col-sm-2 control-label">Confirm Password</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Confirm Password">
+            <input type="password" class="form-control" name="inputPassword" placeholder="Confirm Password" ng-model="form.confirm_password" ng-class="{red: form.confirm_password!=form.password}">
+          </div>
+        </div>
+
+
+        <br>
+        <h4> School Information </h4>
+        <hr>
+
+        <div class="form-group">
+          <label for="inputSchool" class="col-sm-2 control-label">School</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="inputSchool" placeholder="School" ng-model="form.school">
           </div>
         </div>
         
-        <div class="form-group" style="center">
-          <div class="col-sm-6"></div>
-            <button type="submit" class="btn btn-default col-sm-1">Submit</button><br>
+        <div class="form-group">
+          <label for="inputMajor" class="col-sm-2 control-label">Major</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="inputMajor" placeholder="Major" ng-model="form.major">
+          </div>
         </div>
 
-        </form>
-      </div>
-
-      <div class="form" id="company" ng-show="content=='company'">
-        <form class="form-horizontal">
+        <div class="form-group">
+          <label for="inputGradYear" class="col-sm-2 control-label">Graduation Year</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" name="inputMajor" placeholder="Graduation Year" ng-model="form.year">
+          </div>
+        </div>
+      
         
+        <div class="form-group" style="center">
+          <div class="col-sm-6"></div>
+          <button type="submit" class="btn btn-default col-sm-1" ng-click="signup()">Submit</button><br>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="form" name="company" ng-if="form.type=='company'">
+      <form class="form-horizontal">
+
         <div class="form-group">
           <label for="inputEmail" class="col-sm-2 control-label">Email</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail2" placeholder="Email">
+            <input type="text" class="form-control" name="inputEmail2" placeholder="Email" ng-model="form.email">
           </div>
         </div>
         
         <div class="form-group">
           <label for="inputCompany" class="col-sm-2 control-label">Company</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputCompany" placeholder="Company">
+            <input type="text" class="form-control" name="inputCompany" placeholder="Company" ng-model="form.company">
           </div>
         </div>
         
         <div class="form-group">
           <label for="inputPassword" class="col-sm-2 control-label">Password</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+            <input type="password" class="form-control" name="inputPassword2" placeholder="Password" ng-model="form.password">
+          </div>
+        </div>
+        
+         <div class="form-group">
+          <label for="inputPassword" class="col-sm-2 control-label">Confirm Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="inputPassword" placeholder="Confirm Password" ng-model="form.confirm_password" ng-class="{red: form.confirm_password!=form.password}">
+          </div>
+        </div>
+
+        <br>
+        <h4>Ambassador Information</h4>
+        <hr>
+
+        <div class="form-group">
+          <label for="inputJob" class="col-sm-2 control-label">Job Title</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="inputJob" placeholder="Job Title" ng-model="form.job_title">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputDate" class="col-sm-2 control-label">Job Description</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="description" placeholder="Job Description" ng-model="form.job_description">
           </div>
         </div>
         
         <div class="form-group">
-          <label for="inputPassword" class="col-sm-2 control-label">Confirm Password</label>
+          <label for="inputDate" class="col-sm-2 control-label">Application Due Date</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword2" placeholder="Confirm Password">
+            <input type="date" class="form-control" name="inputPassword2" placeholder="Job Title" ng-model="form.date">
           </div>
         </div>
-        
+
+         <div class="form-group">
+          <label for="inputDate" class="col-sm-2 control-label">Job Website Link</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="website" placeholder="Job Website" ng-model="form.website">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="schoolInput" class="col-sm-2 control-label">List of Schools where we are hiring for this position (separate via commas)</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="inputNames" placeholder="Schools" ng-model="form.schools" ng-list required>
+          </div>
+        </div>
+
         <div class="form-group" style="center">
           <div class="col-sm-6"></div>
-            <button type="submit" class="btn btn-default col-sm-1">Submit</button><br>
+          <button type="submit" class="btn btn-default col-sm-1" ng-click="signup()">Submit</button><br>
         </div>
         
-        </form>
-      </div>
-        <div class="other-login ">
-    <img src="img/login/facebook.jpg"></img>
-    <img src="img/login/google.jpg"></img>
-    <img src="img/login/linkedin.jpg"></img>
-
-        </div>
-
-      
+      </form>
     </div>
+    <div class="other-login ">
+      <img src="img/login/facebook.jpg"></img>
+      <img src="img/login/google.jpg"></img>
+      <img src="img/login/linkedin.jpg"></img>
+
+    </div>
+
+
+  </div>

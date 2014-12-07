@@ -9,6 +9,12 @@ AppyServices.factory('Tester', function($http) {
     //json array
 });
 
+AppyServices.factory('Teste', function($http) { 
+    return $http.get('http://wwwp.cs.unc.edu/Courses/comp426-f14/wangk1/test/users.php'); //any backend route
+    //json array
+});
+
+
 AppyServices.factory('Joblist', ['$resource',
   function($resource){
     return $resource('data/:companyid.json', {}, {
