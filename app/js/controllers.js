@@ -8,8 +8,7 @@ AppyControllers.controller('JobListCtrl', ['$scope', 'Joblist', 'States',
   function($scope, Joblist) {
     $scope.jobs = Joblist.query();
     $scope.charLimit=150;
-    $scope.order = 'company';
-
+    $scope.order = 'application_date';
   }]);
 
 AppyControllers.controller('CompanyDetailCtrl', ['$scope', '$routeParams', 'Company',
@@ -71,8 +70,17 @@ AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
       if ($scope.form.confirm_password!=$scope.form.password){
         $scope.message="Passwords did not match!"
       }
-      console.log($scope.form);
+      // else if (($scope.form.type=="student") && (!($scope.form.password || $scope.form.email || $scope.form.first_name || $scope.form.last_name || $scope.form.major || $scope.form.year || $scope.form.school))){
+      //       $scope.message="You missed input field(s)"
+      // }
+      // else if (($scope.form.type=="company") && !($scope.form.password || $scope.form.email || $scope.form.company || $scope.form.job_title || $scope.form.job_description || $scope.form.date || $scope.form.website  || $scope.form.schools)){
+      //       $scope.message="You missed input field(s)";
+      // }
 
+      // else{
+      //   console.log($scope.form.type);
+      // }
+      
     // $http.post('/someUrl',$scope.form).
     //   success(function(data, status, headers, config) {
     //   // this callback will be called asynchronously
@@ -96,10 +104,14 @@ AppyControllers.controller('AboutCtrl', ['$scope',
 AppyControllers.controller('LoginCtrl', ['$scope', 'Tester',
    function($scope, Tester) {
 
-    Tester.success(function(data) { 
-      $scope.here=data;
-      console.log(data);
-    });
+    $scope.login = function(){
+      console.log($scope.form);
+    }
+
+    // Tester.success(function(data) { 
+    //   $scope.here=data;
+    //   console.log(data);
+    // });
 
   }]);
 
