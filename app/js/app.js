@@ -6,8 +6,8 @@ var AppyApp= angular.module('AppyApp', [
   'ngRoute',
 //  'AppyAnimations',
   'AppyControllers',
-  'AppyFilters',
-  'AppyServices',
+ 'AppyServices',
+ 'AppyFilters',
   'ui.bootstrap'
   
 ]);

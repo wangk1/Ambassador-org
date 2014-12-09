@@ -19,7 +19,7 @@
 
     <div class="col-md-9">
       <ul class="jobs">
-        <a href="#/job/{{job.company}}" ng-repeat="student in students  | filter: { major:majorsearch} "
+        <a href="#/job/{{job.company}}" ng-repeat="student in students  | filter: { name:query, major:majorsearch} "
         class="thumbnail job-listing nounderline listing">
         
         <h4 class="jobleft">{{student.name}} <span class="smaller">at {{student.school}}</span> </h4>
