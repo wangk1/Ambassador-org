@@ -1,8 +1,8 @@
 <?php
-function is_logged_in() {
-  return false;
+session_start();
 
-  if(cookieIsValid()) {
+function is_logged_in() {
+  if(isset($_SESSION['id'])) {
     return true;
   }
   return false;
@@ -68,9 +68,10 @@ function is_logged_in() {
 
     <li> 
 <?php else: ?>
-      <li role="presentation" class="login" ng-class="{ active: isActive('/profile')}"><a href="#/profile"><div class="right">Profile</div></a></li>
-
-    <li role="presentation" ng-class="{ active: isActive('/login')}"><a href="#/login"><?php echo $user['name']; ?></li>
+     <li role="presentation" class="login" ng-class="{ active: isActive('/profile')}"><a href="#/profile"><div class="right">Profile</div></a></li>
+	
+	 <li role="presentation" class="login" ng-class="{ active: isActive('/login')}"><a href="#/login"><div class="right">Log Out</div></a></li>
+   <!-- <li role="presentation" ng-class="{ active: isActive('/login')}"><a href="#/login"><?php echo $user['name']; ?></li>-->
 <?php endif; ?>
 </ul>
 
