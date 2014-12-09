@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 require_once "orm/DBManager.php";
 DBManager::getManager() -> connect();
 
-$_POST = json_decode(file_get_contents('php://input'));
+$_POST = json_decode(file_get_contents('php://input'),true);
 
 $path = array();
 if(isset($_SERVER['PATH_INFO'])) {
