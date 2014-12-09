@@ -1,4 +1,7 @@
     <div class="container">
+
+      <div ng-if="account=='not_created'">
+
       <h1>Registration</h1><br>
 
       <div class="choose-user">
@@ -8,7 +11,6 @@
         <input type="radio" ng-click="content='student'" value="student" class="btn btn-default" ng-model="form.type">Student</input>
         <input type="radio" ng-click="content='company'" value="company" class="btn btn-default" ng-model="form.type">Company Representative
       </div> -->
-
       <input id="toggle-on" class="toggle toggle-left" name="toggle" value="student" type="radio" ng-model="form.type" checked=true
       ><label for="toggle-on" class="btn">Student</label
       ><input id="toggle-off" class="toggle toggle-right" name="toggle" value="company" ng-model="form.type" type="radio"
@@ -177,6 +179,8 @@
       <img src="img/login/linkedin.jpg"></img>
 
     </div>
-
-
+</div>
+ <div ng-if="account=='created'">
+  <h2>Congrats, you just created an account!</h2>
+  </div>
   </div>

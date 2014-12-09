@@ -66,6 +66,7 @@ AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
    function($scope, $http) {
     $scope.form={};
     $scope.form.type="student";
+    $scope.account="not_created";
 
     $scope.signup = function() {
       $scope.message="";
@@ -85,7 +86,9 @@ AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
       
     $http.post('api/rest.php',$scope.form).
        success(function(data, status, headers, config) {
-      console.log(data);
+        console.log(data);
+        $scope.account="created"
+        window.location = '#/home';
     }).
      error(function(data, status, headers, config) {
          console.log("not ok");
@@ -103,17 +106,26 @@ AppyControllers.controller('AboutCtrl', ['$scope',
 
   }]);
 
-AppyControllers.controller('LoginCtrl', ['$scope', 'Tester',
-   function($scope, Tester) {
+AppyControllers.controller('LoginCtrl', ['$scope', 'Tester', '$http',
+   function($scope, Tester, $http) {
 
     $scope.login = function(){
       console.log($scope.form);
+
+      $http.post('api/login.php',$scope.form).
+       success(function(data, status, headers, config) {
+       console.log(data);
+      }).
+      error(function(data, status, headers, config) {
+        console.log("not ok");
+     // called asynchronously if an error occurs
+     // or server returns response with an error status.
+     });
+
+
     }
 
-    // Tester.success(function(data) { 
-    //   $scope.here=data;
-    //   console.log(data);
-    // });
+
 
   }]);
 
@@ -130,7 +142,6 @@ AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students',
     States.success(function(data) { 
       $scope.states=data;
       $scope.statechoose=$scope.states[0];
-    
     });
 
     Students.success(function(data) { 
