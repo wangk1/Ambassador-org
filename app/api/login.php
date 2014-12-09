@@ -13,8 +13,8 @@ if(isset($_POST)) {
 		//fetch the matching email and password from db
 		$loginobj=Login::get(null, $_POST['email'], $_POST['password']);
 		
-		if(count($loginobj)>0) {
-			print_r($loginobj);
+		if(isset($loginobj[0])) {
+			//login success
 			
 		}
 		
