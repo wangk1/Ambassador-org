@@ -204,10 +204,21 @@ AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students','$
   }]);
 
 
-AppyControllers.controller('HeaderController', ['$scope', '$location',
-   function($scope, $location) {
+AppyControllers.controller('HeaderController', ['$scope', '$location','$http',
+   function($scope, $location,$http) {
      $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };
 
+	$scope.logout=function() {
+		$http.get('api/login.php/logout').success(function(data, status, headers, config) {
+        console.log("successful logout");
+       
+    }).
+    error(function(data, status, headers, config) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+    });
+	};	
+	
  }]);
