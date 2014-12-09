@@ -11,7 +11,7 @@
 	
 	DBManager::getManager()->connect();
 	
-	$student=Posts::get(2,null,null,null,null,null,null);//, -1, "Some great position", '2014-12-9', '2014-12-9');
+	$student=Posts::get(null,14,null,null,null,null,null);//, -1, "Some great position", '2014-12-9', '2014-12-9');
 	//14,'Apple Inc.','apple','Coupertino','USA','CA','www.apple.com');
 	
 	print_r($student);

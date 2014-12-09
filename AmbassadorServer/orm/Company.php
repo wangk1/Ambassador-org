@@ -1,4 +1,7 @@
 <?php
+
+require_once 'SQLObj.php';
+
 class Company {
 	private $id;
 	private $name;
@@ -56,7 +59,7 @@ class Company {
 		$key = $sql->execute ( $stmt, true );
 		
 		// return primary key
-		return new Student ( $key );
+		return new Company ( $key );
 	}
 	public static function get($id=null, $name=null, $shortname=null, $city=null
 			, $country=null, $state=null, $website=null) {

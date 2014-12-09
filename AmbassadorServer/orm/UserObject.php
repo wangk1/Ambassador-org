@@ -1,5 +1,6 @@
 <?php
 require_once 'BaseObject.php';
+require_once 'SQLObj.php';
 
 
 class UserObject extends BaseObject{

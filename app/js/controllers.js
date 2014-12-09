@@ -83,15 +83,19 @@ AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
         console.log($scope.form);
       }
       
-    // $http.post('/someUrl',$scope.form).
-    //   success(function(data, status, headers, config) {
-    //   // this callback will be called asynchronously
-    //   // when the response is available
-    // }).
-    // error(function(data, status, headers, config) {
-    //   // called asynchronously if an error occurs
-    //   // or server returns response with an error status.
-    // });
+  //   $http.post('../AmbassadorServer/rest.php',$scope.form).
+     $http.post('../AmbassadorServer/rest.php',{'type': 'student'}).
+       success(function(data, status, headers, config) {
+        console.log("ok");
+        console.log(data);
+       // this callback will be called asynchronously
+      // when the response is available
+    }).
+     error(function(data, status, headers, config) {
+         console.log("not ok");
+       // called asynchronously if an error occurs
+       // or server returns response with an error status.
+     });
 
 }
 

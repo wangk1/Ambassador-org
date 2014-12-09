@@ -1,5 +1,7 @@
 <?php
 
+require_once 'SQLObj.php';
+
 class Posts {
 	private $pid;
 	private $id;

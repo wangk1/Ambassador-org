@@ -1,5 +1,7 @@
 <?php
 
+require_once 'SQLObj.php';
+
 class Login{
 	
 	private $id;
@@ -35,7 +37,7 @@ class Login{
 		$key = $sql->execute ( $stmt, true );
 	
 		// return primary key
-		return new Student ( $key );
+		return new Login ( $key );
 	}
 	public static function get($id, $email, $password) {
 		$sql = SQLObj::getSQLObj ();

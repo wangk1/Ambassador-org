@@ -1,5 +1,7 @@
 <?php
 
+require_once 'SQLObj.php';
+
 class Account{
 	private $id;
 	private $type;
@@ -7,7 +9,7 @@ class Account{
 	public function __construct($id=null, $type=null) {
 		
 		$this->id=$id;
-		$this->type=$sid;
+		$this->type=$type;
 	
 		
 	}
@@ -33,7 +35,7 @@ class Account{
 		$key=$sql->execute($stmt,true);
 		
 		//return primary key
-		return new Student($key);
+		return new Account($key);
 		
 	}
 	
