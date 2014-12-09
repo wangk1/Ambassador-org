@@ -60,7 +60,7 @@ class Login{
 	
 		$result = mysqli_fetch_all ( $result, MYSQLI_ASSOC );
 	
-		print_r ( $result );
+	
 		$r = array ();
 		foreach ( $result as $rows ) {
 			$r [] = new Login ( $rows ['ID'], $rows ['email'], $rows ['password']);

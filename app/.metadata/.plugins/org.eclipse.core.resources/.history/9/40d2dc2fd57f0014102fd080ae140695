@@ -5,13 +5,13 @@ require_once "orm/DBManager.php";
 require_once "orm/Login.php";
 
 DBManager::getManager ()->connect ();
-$_POST = json_decode(file_get_contents('php://input'),true);
+// $_GET = json_decode(file_get_contents('php://input'),true);
 
 // check if everything exists
-if (isset ( $_POST )) {
-	if (isset ( $_POST ['password'] ) && isset ( $_POST ['email'] )) {
+if (isset ( $_GET )) {
+	if (isset ( $_GET ['password'] ) && isset ( $_GET ['email'] )) {
 		// fetch the matching email and password from db
-		$loginobj = Login::get ( null, $_POST ['email'], $_POST ['password'] );
+		$loginobj = Login::get ( null, $_GET ['email'], $_GET ['password'] );
 		
 		if (isset ( $loginobj [0] )) {
 			// login success
