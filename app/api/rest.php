@@ -206,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $list = Student::get(null,null,null,null,null);
         $returnarray;
         foreach ($list as $student){
-          $arr = array('first_name' => $student->getFirst(), 'last_name' => $student->getLast(), 'year' => $student->getYear());
+          $arr = array('id' => $student->getId(), 'first_name' => $student->getFirst(), 'last_name' => $student->getLast(), 'year' => $student->getYear());
           $returnarray[] = $arr;
         }
         echo json_encode($returnarray);
@@ -224,7 +224,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $list = Company::get(null,null,null,null,null,null,null);
         $returnarray;
         foreach ($list as $company){
-          $arr = array('companyName' => $company->getName(), 'shortname' => $company->getShortName(), 'city' => $company->getCity(), 'state' => $company->getState(), 'country' => $company->getCountry(), 'website' => $company->getWebsite());
+          $arr = array('id' => $company->getId(), 'companyName' => $company->getName(), 'shortname' => $company->getShortName(), 'city' => $company->getCity(), 'state' => $company->getState(), 'country' => $company->getCountry(), 'website' => $company->getWebsite());
           $returnarray[] = $arr;
         }
         echo json_encode($returnarray);
