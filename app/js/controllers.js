@@ -127,8 +127,8 @@ AppyControllers.controller('AboutCtrl', ['$scope',
 
   }]);
 
-AppyControllers.controller('LoginCtrl', ['$scope',  '$http',
-   function($scope,  $http) {
+AppyControllers.controller('LoginCtrl', ['$scope',  '$http', '$window',
+   function($scope,  $http,$window) {
 
     $scope.login = function(){
       console.log($scope.form);
@@ -136,7 +136,7 @@ AppyControllers.controller('LoginCtrl', ['$scope',  '$http',
       $http.post('api/login.php',$scope.form).
        success(function(data, status, headers, config) {
 	   location.reload(true);
-		//$window.location.reload();
+		$window.location.href='#/home';
        console.log(data);
       }).
       error(function(data, status, headers, config) {
