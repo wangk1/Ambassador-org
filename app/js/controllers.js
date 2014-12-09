@@ -18,6 +18,25 @@ AppyControllers.controller('CompanyDetailCtrl', ['$scope', '$routeParams', 'Comp
 
   }]);
 
+
+AppyControllers.controller('FakeCompanyDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+      console.log($routeParams.companyid);
+
+    $http.get('api/rest.php/'+$routeParams.companyid).
+      success(function(data, status, headers, config) {
+         $scope.company=data;
+         console.log("bad")
+    }).
+    error(function(data, status, headers, config) {
+      console.log("bad")
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+    });
+
+  }]);
+
+
 //Home Controller
 AppyControllers.controller('HomeCtrl', ['$scope','$carousel', function($scope, $carousel) {
 

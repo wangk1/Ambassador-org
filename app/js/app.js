@@ -29,6 +29,11 @@ AppyApp.config(['$routeProvider',
         templateUrl: 'partials/profile-real.html',
         controller: 'CompanyDetailCtrl'
       }).
+
+      when('/profile-connected/:companyid', {
+        templateUrl: 'partials/profile-connected.html',
+        controller: 'FakeCompanyDetailCtrl'
+      }).
   
       when('/profile',{
         templateUrl: 'partials/profile.html',
