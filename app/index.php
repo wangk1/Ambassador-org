@@ -70,7 +70,7 @@ function is_logged_in() {
 <?php else: ?>
      <li role="presentation" class="login" ng-class="{ active: isActive('/profile')}"><a href="#/profile"><div class="right">Profile</div></a></li>
 	
-	 <li role="presentation" class="login" ng-class="{ active: isActive('/login')}"><a href="#/login"><div class="right">Log Out</div></a></li>
+	 <li role="presentation" class="login" ng-class="{ active: isActive('/login')}" ng-click="logout()"><a href="#/home"><div class="right">Log Out</div></a></li>
    <!-- <li role="presentation" ng-class="{ active: isActive('/login')}"><a href="#/login"><?php echo $user['name']; ?></li>-->
 <?php endif; ?>
 </ul>
