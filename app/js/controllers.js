@@ -136,15 +136,15 @@ AppyControllers.controller('ProfileCtrl', ['$scope',
   }]);
 
 
-AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students',
-  function($scope, States, Students) {
+AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students','$http',
+  function($scope, States, Students, $http) {
     
 
     $http.get('api/rest.php/students/').
   success(function(data, status, headers, config) {
+      console.log("this is the printed data");
       console.log(data);
-    // this callback will be called asynchronously
-    // when the response is available
+      $scope.students=data;
   }).
   error(function(data, status, headers, config) {
     // called asynchronously if an error occurs
@@ -157,9 +157,9 @@ AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students',
       $scope.statechoose=$scope.states[0];
     });
 
-    Students.success(function(data) { 
-      $scope.students=data;
-    });
+  //  Students.success(function(data) { 
+   //   $scope.students=data;
+   // });
 
     $scope.majors=["All", "Technical/Engineering", "Business"];
     $scope.majorchoose=$scope.majors[0];
