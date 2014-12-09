@@ -1,0 +1,33 @@
+ <div class="container-fluid">
+  <h1>Students</h1><br><br>
+  <div class="row">
+   <div class="col-md-3">
+    <!--Sidebar content-->
+
+    </div>
+
+    <div class="col-md-9">
+      <ul class="jobs">
+        <a href="#/job/{{job.company}}" ng-repeat="student in students"
+        class="thumbnail job-listing nounderline listing">
+        
+        <h4 class="jobleft">{{student.first_name}} {{student.last_name}} <span class="smaller"> </h4>
+        <div class="description">
+   <!--        <h8><b>Major: </b>{{student.major}}</h8><br> -->
+          <h8><b>Class: </b>{{student.year}}</h8>
+        </div>
+      
+      </a>
+    </ul>
+  </div>
+
+</div>
+
+</div>
+
+
+ <!--  <select ng-model="major" class="form-control">
+          <option value="company">Technical/Engineering</option>
+          <option value="application_date">Business</option>
+        </select>
+      -->
