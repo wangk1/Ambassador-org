@@ -83,7 +83,7 @@ AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
         console.log($scope.form);
       }
       
-    $http.post('api/rest.php/users',$scope.form).
+    $http.post('api/rest.php',$scope.form).
        success(function(data, status, headers, config) {
       console.log(data);
     }).

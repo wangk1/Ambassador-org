@@ -1,27 +1,20 @@
 <?php 
 error_reporting(E_ALL);
-
 echo "Hi";
-
-
-
-
 require_once "orm/DBManager.php";
 DBManager::getManager() -> connect();
+$_POST = json_decode(file_get_contents('php://input'),true);
 
-$_POST = json_decode(file_get_contents('php://input'));
 
 $path = array();
+
 if(isset($_SERVER['PATH_INFO'])) {
 $path = explode('/',$_SERVER['PATH_INFO']);
 array_shift($path);
 }
-
-
-
 $err = "";
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //company registration
     if($_POST["type"] == "company"){
       $company = cleanInput($_POST["company"]);
@@ -29,25 +22,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $err .= "<br />Error -- company name not found";
         $company = null;
       }
-
       $shortname = cleanInput($_POST["shortname"]);
       if($shortname=="") {
         $shortname = $company;
       }
-
-
       $email = cleanInput($_POST["email"]);
       if($email==""){
         $err .="<br />Error -- email not found";
         $email = null;
       }
-
       $country = cleanInput($_POST["country"]);
       if($country==""){
         $err .= "<br />Error -- country not found";
         $country = null;
       }
-
       $state = cleanInput($_POST["state"]);
       if($state==""){
         $err .= "<br />Error -- state not found";
@@ -83,7 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $err .= "<br />Error -- passwords do not match";
         $password = null; //Must have this so that in case of update, a null password (which is required for update) prevents update if the two don't match
       }
-
       
       if($err=="" && !isset($_POST["id"])){
         require_once "orm/Account.php";
@@ -104,10 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       } else {
         if(!($err==""))
           echo $err;
-
       }
-
-
     }
     
     //Student registration
@@ -152,6 +136,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       if($err=="" && !isset($_POST["id"])){
         require_once "orm/Account.php";
         $id = Account::create('student') -> getId();
+		print_r($id);
+		
         require_once "orm/Student.php";
         Student::create($id, -1, $first_name, $last_name, $year);
         require_once "orm/Login.php";
@@ -163,14 +149,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         Student::update($id,null,$first_name,$last_name,$year);
         require_once "orm/Login.php";
         Login::update($id,$email,$password);
-
-
       } else {
         if(!($err==""))
           echo $err;
-
       }
-
       
     }
     else { //Post with incorrect type
@@ -227,13 +209,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
       }
     }
-
 }
 function cleanInput($input){
     
     $input = trim($input);
     $input = strip_tags($input);
     return $input;
-}*/
+}
 
 ?>
