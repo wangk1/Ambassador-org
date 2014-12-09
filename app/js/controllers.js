@@ -25,8 +25,9 @@ AppyControllers.controller('FakeCompanyDetailCtrl', ['$scope', '$routeParams', '
 
     $http.get('api/rest.php/'+$routeParams.companyid).
       success(function(data, status, headers, config) {
+         data=data.substring(data.indexOf("{"), data.length);
+         data= eval("("+data+")");
          $scope.company=data;
-         console.log("bad")
     }).
     error(function(data, status, headers, config) {
       console.log("bad")
