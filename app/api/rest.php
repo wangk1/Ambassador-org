@@ -1,7 +1,6 @@
 <?php 
 error_reporting(E_ALL);
 
-echo "Hi";
 
 
 
@@ -178,7 +177,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     
 } else if ($_SERVER["REQUEST_METHOD"] === "GET") {
-echo "hello";
     if(isset($_GET["delete"])){
       if(isset($_GET["id"])){
         require_once "orm/Account.php";
@@ -196,7 +194,7 @@ echo "hello";
         echo "<br /> Cannot delete--id not specified";
       }
     } else
-    if(isset($_GET["students"])) {
+    if($path[0] =="students") {
       if(isset($_GET["id"])){
         require_once "orm/Student.php";
         $student = Student::get($_GET["id"],null,null,null,null)[0];
@@ -206,13 +204,15 @@ echo "hello";
       else{
         require_once "orm/Student.php";
         $list = Student::get(null,null,null,null,null);
+        $returnarray;
         foreach ($list as $student){
           $arr = array('first_name' => $student->getFirst(), 'last_name' => $student->getLast(), 'year' => $student->getYear());
-          echo json_encode($arr);
+           $returnarray[] = $arr;
         }
+        echo json_encode($returnarray);
       }
     }
-    else if(isset($_GET["companies"])) {
+    else if($path[0] == "companies") {
       if(isset($_GET["id"])){
         require_once "orm/Company.php";
         $company = Company::get($_GET["id"],null,null,null,null,null,null)[0];
