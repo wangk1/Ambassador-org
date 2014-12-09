@@ -105,7 +105,8 @@ function is_logged_in() {
           <h5>Using Ambassador</h5>
           <ul class="list-unstyled">
             <li> <a class="undy" href="#/connected-student-list">"Connected" Find Students</a></li>
-             <li> <a class="undy" href="#/connected-company-list">"Connected" Company List</a></li>
+            <li> <a class="undy" href="#/connected-company-list">"Connected" Company List</a></li>
+            <li><a class="undy" href="update-test">Test an Update and Delete Function!</a></li>
             <li><a class="undy" href="mailto:support@ambassador.com">support@ambassador.com</a></li>
 
           </ul>

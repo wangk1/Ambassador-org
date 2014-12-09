@@ -140,9 +140,9 @@ AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
 
 AppyControllers.controller('UpdateTestCtrl', ['$scope', '$http',
    function($scope, $http) {
-    $scope.update = function() {
-
-    $http.post('api/rest.php',{type: "company", id: "54", website: "BLAH!"}).
+    $scope.update = function(number) {
+      console.log(number);
+    $http.post('api/rest.php',{type: "company", id: number, website: "BLAH!"}).
        success(function(data, status, headers, config) {
         console.log("Changed!");
     }).
