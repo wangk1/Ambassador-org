@@ -20,7 +20,15 @@ if (isset ( $_POST )) {
 	} else {
 		$error = 'No password and email recieved';
 	}
-} else {
+} else if(isset($_GET)) {
+	if(isset($_SESSION['id'])) {
+		unset($_SESSION['id']);
+		
+		header("Location: ''");
+	}
+	
+}else {
+
 	$error = 'bad request';
 }
 
