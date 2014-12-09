@@ -22,13 +22,12 @@ AppyControllers.controller('CompanyDetailCtrl', ['$scope', '$routeParams', 'Comp
 AppyControllers.controller('FakeCompanyDetailCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
       console.log($routeParams.companyid);
-
-    $http.get('api/rest.php/'+$routeParams.companyid).
+      var text='api/rest.php/'+ $routeParams.companyid;
+      console.log(text);
+    $http.get('api/rest.php/'+ $routeParams.companyid).
       success(function(data, status, headers, config) {
-         data=data.substring(data.indexOf("{"), data.length);
-         data= eval("("+data+")");
-         console.log(data);
          $scope.company=data;
+         console.log("bad")
     }).
     error(function(data, status, headers, config) {
       console.log("bad")
@@ -82,6 +81,20 @@ AppyControllers.controller('HomeCtrl', ['$scope','$carousel', function($scope, $
 });
 
 
+AppyControllers.controller('FakeStudentListCtrl', ['$scope', '$http',
+  function($scope, $http) {
+  
+    $http.get('api/rest.php/students/').
+      success(function(data, status, headers, config) {
+        console.log("this is the printed data");
+        console.log(data);
+        $scope.students=data;
+    }).
+    error(function(data, status, headers, config) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+    });
+}]);
 
 AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
    function($scope, $http) {
@@ -119,8 +132,22 @@ AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
 
 }
 
-
   }]);
+
+
+AppyControllers.controller('UpdateTestCtrl', ['$scope', '$http',
+   function($scope, $http) {
+    $scope.update = function() {
+
+    $http.post('api/rest.php',{type: "company", id: "54", website: "BLAH!"}).
+       success(function(data, status, headers, config) {
+        console.log("Changed!");
+    }).
+     error(function(data, status, headers, config) {
+         console.log("not ok");
+     });
+  }
+}]);
 
 AppyControllers.controller('AboutCtrl', ['$scope',
    function($scope) {
@@ -205,21 +232,10 @@ AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students','$
   }]);
 
 
-AppyControllers.controller('HeaderController', ['$scope', '$location','$http',
-   function($scope, $location,$http) {
+AppyControllers.controller('HeaderController', ['$scope', '$location',
+   function($scope, $location) {
      $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };
 
-	$scope.logout=function() {
-		$http.get('api/login.php/logout').success(function(data, status, headers, config) {
-        console.log("successful logout");
-		window.location = '#/home';
-    }).
-    error(function(data, status, headers, config) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-    });
-	};	
-	
  }]);
