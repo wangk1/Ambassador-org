@@ -1,0 +1,23 @@
+<?php
+
+require_once "orm/DBManager.php";
+DBManager::getManager() -> connect();
+$_POST = json_decode(file_get_contents('php://input'),true);
+
+
+//check if everything exists
+if(isset($_POST)) {
+	if($_POST['password'] && isset($_POST['email'])) {
+		
+		
+	}
+	
+	
+} else {
+	$error='bad request';
+	
+	
+}
+
+
+?>

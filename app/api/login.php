@@ -20,12 +20,15 @@ if (isset ( $_POST )) {
 	} else {
 		$error = 'No password and email recieved';
 	}
+	
+	
 } else if(isset($_GET)) {
 	if(isset($_SESSION['id'])) {
 		unset($_SESSION['id']);
 		
-		header("Location: ''");
+		
 	}
+	
 	
 }else {
 
@@ -35,12 +38,21 @@ if (isset ( $_POST )) {
 //output http response
 if (isset ( $error )) {
 	header ( $_SERVER ["SERVER_PROTOCOL"] . " 401 ".$error );
-} else {
+} else if(isset ( $_POST )){
 	header ( $_SERVER ["SERVER_PROTOCOL"] . " 200 OK");
 	header ( "Content-Type: application/json");
+	header("Refresh: 0");
 	
 	//the body
 	echo json_encode(array('id'=>$_SESSION['id']),JSON_FORCE_OBJECT);
+	
+	
+	
+} else {
+	header ( $_SERVER ["SERVER_PROTOCOL"] . " 200 OK");
+	
+	header("Refresh: 0");
+	
 }
 
 

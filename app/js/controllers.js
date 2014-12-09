@@ -134,6 +134,8 @@ AppyControllers.controller('LoginCtrl', ['$scope',  '$http',
 
       $http.post('api/login.php',$scope.form).
        success(function(data, status, headers, config) {
+	   location.reload(true);
+		//$window.location.reload();
        console.log(data);
       }).
       error(function(data, status, headers, config) {
@@ -204,8 +206,10 @@ AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students','$
   }]);
 
 
-AppyControllers.controller('HeaderController', ['$scope', '$location','$http',
-   function($scope, $location,$http) {
+AppyControllers.controller('HeaderController', ['$scope', '$location','$http', '$window',
+   function($scope, $location,$http,$window) {
+
+   
      $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };
@@ -213,7 +217,11 @@ AppyControllers.controller('HeaderController', ['$scope', '$location','$http',
 	$scope.logout=function() {
 		$http.get('api/login.php/logout').success(function(data, status, headers, config) {
         console.log("successful logout");
-		window.location = '#/home';
+		location.reload(true);
+		//$window.location.reload();
+		$window.location.href = '#/home';
+		
+		
     }).
     error(function(data, status, headers, config) {
     // called asynchronously if an error occurs
@@ -221,4 +229,5 @@ AppyControllers.controller('HeaderController', ['$scope', '$location','$http',
     });
 	};	
 	
+
  }]);
