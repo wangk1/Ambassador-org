@@ -177,6 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     
 } else if ($_SERVER["REQUEST_METHOD"] === "GET") {
+
     if(isset($_GET["delete"])){
       if(isset($_GET["id"])){
         require_once "orm/Account.php";
