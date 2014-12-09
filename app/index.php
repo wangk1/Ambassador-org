@@ -78,6 +78,43 @@ function is_logged_in() {
 </div>
 -->
 <div ng-view> </div>
+
+
+
+<footer class="footer blue">
+  <section class="padded">
+    <div class="container">
+      <div class="row" style="padding-bottom: 15px">
+        <div class="col-md-6 col-sm-12">
+       <!--    <img src="/assets/img/logo-mini-lg.png" class="pull-left" style="height: 100px; padding: 10px 20px"> -->
+          <h5>What is Ambassador</h5>
+          <p>A site that allows startups/companies to find and connection with their avid fans on campus, and give them the opportunity to be a part of their brand. Give students the opportunity to connect with small companies/brands they love in a setting outside of LinkedIn.</p>
+        </div>
+        <div class="col-sm-3">
+          <h5>About Us</h5>
+          <ul class="list-unstyled">
+            <li><a class="undy" href="#/about">About Us</a></li>
+            <li><a class="undy" href="#/testimonials">Testimonals</a></li>
+
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <h5>Using Ambassador</h5>
+          <ul class="list-unstyled">
+            <li><a class="undy" href="mailto:support@ambassador.com">support@ambassador.com</a></li>
+
+          </ul>
+        </div>
+
+      </div>
+      <div class="row" style="padding-top: 15px;">
+        <div class="col-md-12 clearfix">
+          <span class="pull-left">Copyright 2014, Student Ambassador Inc.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
  
 </body>
 </html>

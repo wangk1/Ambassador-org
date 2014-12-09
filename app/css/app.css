@@ -372,6 +372,7 @@ h1 {
 /*Login page things*/
 
 .other-login{
+	margin-bottom: 100px;
 	margin-top:50px;
 	width:50%;
 
@@ -393,3 +394,23 @@ h1 {
 	
 }
 
+.blue{
+	background-color: #56A0D3;
+	color: black;
+}
+
+a:link.undy{
+	color:black;
+}
+
+a:visited.undy{
+	color:black;
+}
+
+a:hover.undy{
+	color:black;
+}
+
+footer {
+	
+}

@@ -4,20 +4,20 @@
         "school": "University of North Carolina",
         "major": "Computer Science",
         "year": "Junior",
-        "major-type": "Technical/Engineering"
+        "majortype": "Technical/Engineering"
     },  
     {
         "name": "Joe Smoe",
         "school": "University of North Carolina",
         "major": "Finance",
         "year": "Junior",
-        "major-type":"Business"
+        "majortype":"Business"
     },
     {
         "name": "Hello Kitty",
         "school": "University of North Carolina",
         "major": "Journalism",
         "year": "Junior",
-        "major-type": "Not"
+        "majortype": "Not"
     }
 ]

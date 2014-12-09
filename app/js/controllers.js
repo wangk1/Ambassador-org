@@ -64,6 +64,8 @@ AppyControllers.controller('HomeCtrl', ['$scope','$carousel', function($scope, $
 
 AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
    function($scope, $http) {
+    $scope.form={};
+    $scope.form.type="student";
 
     $scope.signup = function() {
       $scope.message="";
@@ -77,9 +79,9 @@ AppyControllers.controller('RegistrationCtrl', ['$scope', '$http',
       //       $scope.message="You missed input field(s)";
       // }
 
-      // else{
-      //   console.log($scope.form.type);
-      // }
+      else{
+        console.log($scope.form);
+      }
       
     // $http.post('/someUrl',$scope.form).
     //   success(function(data, status, headers, config) {

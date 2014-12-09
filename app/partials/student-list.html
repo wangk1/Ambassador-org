@@ -4,21 +4,22 @@
    <div class="col-md-3">
     <!--Sidebar content-->
 
-    <h5>Search:</h5> <input type="text" class="form-control" ng-model="query">
+    <h5>Search (Name):</h5> <input type="text" class="form-control" ng-model="query">
 
-  <!--   <h5>Only students in the following majors</h5>
+     <h5>Search (Major):</h5> <input type="text" class="form-control" ng-model="majorsearch">
+    <h5>Only students in the following majors</h5>
       
       <select ng-model="majorchoose" class="form-control" ng-options="major for major in majors" /></select>
       <h5>Students attending University in:</h5>
 
       <select ng-model="statechoose" class="form-control" ng-options="state.name for state in states">
-      </select> -->
+      </select>
 
     </div>
 
     <div class="col-md-9">
       <ul class="jobs">
-        <a href="#/job/{{job.company}}" ng-repeat="student in students  | filter: { name:query } "
+        <a href="#/job/{{job.company}}" ng-repeat="student in students  | filter: { major:majorsearch} "
         class="thumbnail job-listing nounderline listing">
         
         <h4 class="jobleft">{{student.name}} <span class="smaller">at {{student.school}}</span> </h4>
