@@ -56,9 +56,14 @@ AppyApp.config(['$routeProvider',
         templateUrl: 'partials/testimonials.html',
       }).
 
-        when('/connected-student-list',{
+      when('/connected-student-list',{
         templateUrl: 'partials/connect-student-list.html',
         controller: 'FakeStudentListCtrl'
+      }).
+
+      when('/connected-company-list',{
+        templateUrl: 'partials/connect-company-list.html',
+        controller: 'FakeCompanyListCtrl'
       }).
 
 

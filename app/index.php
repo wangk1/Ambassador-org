@@ -57,7 +57,9 @@ function is_logged_in() {
   
     <li role="presentation" ng-class="{ active: isActive('/about')}"><a href="#/about">About</a></li>
 
+     <!-- <li role="presentation" ng-class="{ active: isActive('/connected-student-list')}"><a href="#/connected-student-list">"Connected" Find Students</a></li>
 
+ -->
 <?php if(!is_logged_in()): ?>
 
     <li role="presentation" class="login"  ng-class="{ active: isActive('/registration')}"><a href="#/registration"><div class="right">Registration</div></a></li>
@@ -91,7 +93,7 @@ function is_logged_in() {
           <p>A site that allows startups/companies to find and connection with their avid fans on campus, and give them the opportunity to be a part of their brand. Give students the opportunity to connect with small companies/brands they love in a setting outside of LinkedIn.</p>
         </div>
         <div class="col-sm-3">
-          <h5>About Us</h5>
+          <h5>More</h5>
           <ul class="list-unstyled">
             <li><a class="undy" href="#/about">About Us</a></li>
             <li><a class="undy" href="#/testimonials">Testimonals</a></li>
@@ -101,6 +103,8 @@ function is_logged_in() {
         <div class="col-sm-3">
           <h5>Using Ambassador</h5>
           <ul class="list-unstyled">
+            <li> <a class="undy" href="#/connected-student-list">"Connected" Find Students</a></li>
+             <li> <a class="undy" href="#/connected-company-list">"Connected" Company List</a></li>
             <li><a class="undy" href="mailto:support@ambassador.com">support@ambassador.com</a></li>
 
           </ul>

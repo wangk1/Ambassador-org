@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <h1>Jobs</h1><br><br>
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+
+    </div>
+
+    <div class="col-md-10">
+      <ul class="jobs">
+        <a href="#/profile/{{job.company}}" ng-repeat="job in jobs"
+        class="thumbnail job-listing nounderline listing">
+        
+          <h4 class="jobleft">Ambassador <span class="smaller">at {{job.companyName}}</span> </h4>
+          <h5 class="duedate">Company HQ in {{job.city}}, {{job.state}} </h5>
+
+        <div class="description">
+          <h8 ng-if="job.description.length>150">{{job.city}} ...</h8>
+          <h8 ng-if="job.description.length<=150">{{job.state}}</h8>
+        </div>
+      </a>
+    </ul>
+  </div>
+
+  </div>
+</div>

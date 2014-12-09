@@ -151,28 +151,33 @@ AppyControllers.controller('FakeStudentListCtrl', ['$scope', '$http',
     });
 }]);
 
-AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students','$http',
-  function($scope, States, Students, $http) {
-      $http.get('api/rest.php/students/').
+AppyControllers.controller('FakeCompanyListCtrl', ['$scope', '$http',
+  function($scope, $http) {
+  
+    $http.get('api/rest.php/companies/').
       success(function(data, status, headers, config) {
         console.log("this is the printed data");
         console.log(data);
-        $scope.students=data;
+        $scope.jobs=data;
     }).
     error(function(data, status, headers, config) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
     });
+}]);
 
+
+AppyControllers.controller('StudentListCtrl', ['$scope', 'States', 'Students','$http',
+  function($scope, States, Students, $http) {
 
     States.success(function(data) { 
       $scope.states=data;
       $scope.statechoose=$scope.states[0];
     });
 
-//   Students.success(function(data) { 
-  //   $scope.students=data;
-  // });
+  Students.success(function(data) { 
+    $scope.students=data;
+  });
 
     $scope.majors=["All", "Technical/Engineering", "Business"];
     $scope.majorchoose=$scope.majors[0];
