@@ -11,9 +11,13 @@ $_POST = json_decode(file_get_contents('php://input'),true);
 if(isset($_POST)) {
 	if(isset($_POST['password']) && isset($_POST['email'])) {
 		//fetch the matching email and password from db
-		$loginobj=Login::get(null, $_POST['email'], $_POST['password'])[0];
+		$loginobj=Login::get(null, $_POST['email'], $_POST['password']);
 		
-		print_r($loginobj);
+		if(count($loginobj)>0) {
+			print_r($loginobj);
+			
+		}
+		
 	} else {
 		$error='No password and email recieved';
 		
