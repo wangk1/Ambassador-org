@@ -71,6 +71,11 @@ AppyApp.config(['$routeProvider',
         controller: 'FakeCompanyListCtrl'
       }).
 
+ when('/update-test',{
+        templateUrl: 'partials/update-test.html',
+        controller: 'UpdateTestCtrl'
+      }).
+
 
       otherwise({
         redirectTo: '/home'
