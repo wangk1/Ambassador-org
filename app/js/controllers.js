@@ -27,6 +27,7 @@ AppyControllers.controller('FakeCompanyDetailCtrl', ['$scope', '$routeParams', '
       success(function(data, status, headers, config) {
          data=data.substring(data.indexOf("{"), data.length);
          data= eval("("+data+")");
+         console.log(data);
          $scope.company=data;
     }).
     error(function(data, status, headers, config) {

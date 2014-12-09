@@ -29,10 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $company = null;
       }
 
-      $shortname = cleanInput($_POST["shortname"]);
+      /*$shortname = cleanInput($_POST["shortname"]);
       if($shortname=="") {
         $shortname = $company;
-      }
+      }*/
 
 
       $email = cleanInput($_POST["email"]);
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $email = null;
       }
 
-      $country = cleanInput($_POST["country"]);
+      /*$country = cleanInput($_POST["country"]);
       if($country==""){
         $err .= "<br />Error -- country not found";
         $country = null;
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       if($city==""){
         $err .= "<br />Error -- city not found";
         $city = null;
-      }
+      }*/
         
       $website = cleanInput($_POST["website"]);
       if($website==""){
@@ -88,7 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once "orm/Account.php";
         $id = Account::create('company') -> getId();
         require_once "orm/Company.php";
-        Company::create($id, $company, $shortname, $city, $country, $state, $website);
+        echo $company;
+        Company::create($id, $company, "shortname", "someCity", "someCountry", "someState", $website);
         require_once "orm/Login.php";
         Login::create($id,$email,$password);
         echo "Your company: " . $company . " was created";
@@ -105,10 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           echo $err;
 
       }
-
-
     }
-    
     //Student registration
     else if($_POST["type"] == "student"){
     
@@ -169,14 +167,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           echo $err;
 
       }
-
-      
     }
     else { //Post with incorrect type
       $err = "<br />Error -- type (student or company) incorrect";
     }
     
-} else if ($_SERVER["REQUEST_METHOD"] === "GET") {
+ }
+ else if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
     if(isset($_GET["delete"])){
       if(isset($_GET["id"])){
