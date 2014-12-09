@@ -19,7 +19,6 @@ final class SQLObj {
 	}
 	
 	public function execute($query,$returnKey=false) {
-		echo $query;
 		
 		if($returnKey) {
 			mysqli_query($this->mysqli, $query );
