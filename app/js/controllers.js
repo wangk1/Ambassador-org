@@ -212,7 +212,7 @@ AppyControllers.controller('HeaderController', ['$scope', '$location','$http',
 	$scope.logout=function() {
 		$http.get('api/login.php/logout').success(function(data, status, headers, config) {
         console.log("successful logout");
-       
+		window.location = '#/home';
     }).
     error(function(data, status, headers, config) {
     // called asynchronously if an error occurs
