@@ -207,7 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $returnarray;
         foreach ($list as $student){
           $arr = array('first_name' => $student->getFirst(), 'last_name' => $student->getLast(), 'year' => $student->getYear());
-           $returnarray[] = $arr;
+          $returnarray[] = $arr;
         }
         echo json_encode($returnarray);
       }
@@ -222,10 +222,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       else {
         require_once "orm/Company.php";
         $list = Company::get(null,null,null,null,null,null,null);
+        $returnarray;
         foreach ($list as $company){
           $arr = array('companyName' => $company->getName(), 'shortname' => $company->getShortName(), 'city' => $company->getCity(), 'state' => $company->getState(), 'country' => $company->getCountry(), 'website' => $company->getWebsite());
-          echo json_encode($arr);
+          $returnarray[] = $arr;
         }
+        echo json_encode($returnarray);
       }
     }
     else {
