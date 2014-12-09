@@ -106,8 +106,8 @@ AppyControllers.controller('AboutCtrl', ['$scope',
 
   }]);
 
-AppyControllers.controller('LoginCtrl', ['$scope', 'Tester', '$http',
-   function($scope, Tester, $http) {
+AppyControllers.controller('LoginCtrl', ['$scope',  '$http',
+   function($scope,  $http) {
 
     $scope.login = function(){
       console.log($scope.form);
